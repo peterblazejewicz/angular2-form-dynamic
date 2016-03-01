@@ -2,9 +2,16 @@
   "name": "angular2-form-dynamic",
   "version": "1.0.0",
   "description": "A modified content based on: http://www.syntaxsuccess.com/angular-2-samples/#/demo/survey",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lite": "lite-server -c ./config/bs-config.js",
+    "postinstall": "npm run typings install",
+    "sass": "node-sass --output ./src/styles/ ./src/styles/style.scss",
+    "sass:w": "node-sass --watch ./src/styles/style.scss --output ./src/styles/ ./src/styles/style.scss",
+    "start": "concurrently \"npm run sass\" \"npm run sass:w\" \"npm run tsc:w\" \"npm run lite\"",
+    "tsc": "tsc",
+    "tsc:w": "tsc --watch",
+    "typings": "typings"
   },
   "repository": {
     "type": "git",
@@ -18,9 +25,15 @@
   },
   "homepage": "https://github.com/peterblazejewicz/angular2-form-dynamic#readme",
   "devDependencies": {
+    "concurrently": "^2.0.0",
     "lite-server": "^2.1.0",
+    "modernizr": "^3.3.1",
+    "node-sass": "^3.4.2",
     "tslint": "^3.5.0",
     "typescript": "^1.8.2",
     "typings": "^0.6.8"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6"
   }
 }

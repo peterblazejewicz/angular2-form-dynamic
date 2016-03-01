@@ -1,5 +1,7 @@
 {
   "eslint.enable": false,
   "jshint.enable": false,
-  "tslint.enable": true
+  "tslint.enable": true,
+  "tslint.configFile": "./config/tslint.json",
+  "typescript.tsdk": "./node_modules/typescript/lib/"
 }
