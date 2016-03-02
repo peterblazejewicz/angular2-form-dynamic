@@ -35,3 +35,9 @@ npm-debug.log
 
 # TypeScript
 typings
+
+# transpiled output
+src/**/*.css
+src/**/*.css.map
+src/app/**/*.js
+src/app/**/*.js.map
